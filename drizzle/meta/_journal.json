@@ -15,6 +15,13 @@
       "when": 1730831731881,
       "tag": "0001_first_white_tiger",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1730835310724,
+      "tag": "0002_massive_shadowcat",
+      "breakpoints": true
     }
   ]
 }
