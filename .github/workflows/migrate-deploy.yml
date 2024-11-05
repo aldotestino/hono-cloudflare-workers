@@ -1,0 +1,40 @@
+name: Migrate Database & Deploy Worker
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    migrate:
+      runs-on: ubuntu-latest
+      name: Migrate Database
+      steps:
+          - uses: actions/checkout@v4
+          - uses: pnpm/action-setup@v4
+            with:
+              version: 9
+              run_install: false
+          - name: Install dependencies
+            run: pnpm install
+          - name: Apply migrations
+            run: pnpm db:migrate
+            env:
+                DATABASE_URL: ${{ secrets.DATABASE_URL }} # DATABASE_URL for the main branch
+
+    deploy:
+        runs-on: ubuntu-latest
+        name: Deploy Worker
+        steps:
+            - uses: actions/checkout@v4
+            - uses: pnpm/action-setup@v4
+              with:
+                version: 9
+                run_install: false
+            - name: Build & Deploy Worker
+              uses: cloudflare/wrangler-action@v3
+              with:
+                apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+
