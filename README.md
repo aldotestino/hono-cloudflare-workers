@@ -5,6 +5,7 @@ A template repository to deploy a Hono application on Cloudflare Workers
 ## Features
 - [x] Hono application
 - [x] Deploy on push with Github action
+- [ ] Body and parameters validation with Zod
 - [x] Database (Drizzle + Neon)
 - [ ] Authentication (Clerk)
 

@@ -11,13 +11,15 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "tsx ./src/db/migrate.ts",
-    "prova": "tsx ./src/db/prova.ts"
+    "db:migrate": "tsx ./src/db/migrate.ts"
   },
   "dependencies": {
+    "@hono/zod-validator": "^0.4.1",
     "@neondatabase/serverless": "^0.10.1",
     "drizzle-orm": "^0.36.0",
-    "hono": "^4.6.8"
+    "drizzle-zod": "^0.5.1",
+    "hono": "^4.6.8",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.8.0",

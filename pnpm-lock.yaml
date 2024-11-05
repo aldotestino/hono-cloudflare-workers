@@ -8,15 +8,24 @@ importers:
 
   .:
     dependencies:
+      '@hono/zod-validator':
+        specifier: ^0.4.1
+        version: 0.4.1(hono@4.6.8)(zod@3.23.8)
       '@neondatabase/serverless':
         specifier: ^0.10.1
         version: 0.10.1
       drizzle-orm:
         specifier: ^0.36.0
         version: 0.36.0(@cloudflare/workers-types@4.20241022.0)(@neondatabase/serverless@0.10.1)(@types/pg@8.11.6)(postgres@3.4.5)
+      drizzle-zod:
+        specifier: ^0.5.1
+        version: 0.5.1(drizzle-orm@0.36.0(@cloudflare/workers-types@4.20241022.0)(@neondatabase/serverless@0.10.1)(@types/pg@8.11.6)(postgres@3.4.5))(zod@3.23.8)
       hono:
         specifier: ^4.6.8
         version: 4.6.8
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^3.8.0
@@ -961,6 +970,12 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
+  '@hono/zod-validator@0.4.1':
+    resolution: {integrity: sha512-I8LyfeJfvVmC5hPjZ2Iij7RjexlgSBT7QJudZ4JvNPLxn0JQ3sqclz2zydlwISAnw21D2n4LQ0nfZdoiv9fQQA==}
+    peerDependencies:
+      hono: '>=3.9.0'
+      zod: ^3.19.1
+
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -1567,6 +1582,12 @@ packages:
         optional: true
       sqlite3:
         optional: true
+
+  drizzle-zod@0.5.1:
+    resolution: {integrity: sha512-C/8bvzUH/zSnVfwdSibOgFjLhtDtbKYmkbPbUCq46QZyZCH6kODIMSOgZ8R7rVjoI+tCj3k06MRJMDqsIeoS4A==}
+    peerDependencies:
+      drizzle-orm: '>=0.23.13'
+      zod: '*'
 
   electron-to-chromium@1.5.50:
     resolution: {integrity: sha512-eMVObiUQ2LdgeO1F/ySTXsvqvxb6ZH2zPGaMYsWzRDdOddUa77tdmI0ltg+L16UpbWdhPmuF3wIQYyQq65WfZw==}
@@ -3456,6 +3477,11 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
+  '@hono/zod-validator@0.4.1(hono@4.6.8)(zod@3.23.8)':
+    dependencies:
+      hono: 4.6.8
+      zod: 3.23.8
+
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.6':
@@ -3972,6 +3998,11 @@ snapshots:
       '@neondatabase/serverless': 0.10.1
       '@types/pg': 8.11.6
       postgres: 3.4.5
+
+  drizzle-zod@0.5.1(drizzle-orm@0.36.0(@cloudflare/workers-types@4.20241022.0)(@neondatabase/serverless@0.10.1)(@types/pg@8.11.6)(postgres@3.4.5))(zod@3.23.8):
+    dependencies:
+      drizzle-orm: 0.36.0(@cloudflare/workers-types@4.20241022.0)(@neondatabase/serverless@0.10.1)(@types/pg@8.11.6)(postgres@3.4.5)
+      zod: 3.23.8
 
   electron-to-chromium@1.5.50: {}
 
