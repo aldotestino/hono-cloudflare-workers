@@ -1,6 +1,13 @@
 import { Hono } from 'hono';
+import { dbMiddleware } from './db/middleware';
 
-const app = new Hono();
+type Env = {
+  DATABASE_URL: string;
+};
+
+const app = new Hono<{ Bindings: Env }>();
+
+app.use(dbMiddleware);
 
 app.get('/', (c) => {
   return c.json({
